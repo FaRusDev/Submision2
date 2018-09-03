@@ -15,10 +15,10 @@ import retrofit2.http.Query
 interface NetworkInterface {
     //fungsi untuk ambil endpoint dari retrofit
     @GET("eventsnextleague.php?id=4328")
-    fun getNext():Observable<List<EventsItem>>
+    fun getNext():Observable<List<Events>>
 
     @GET("eventspastleague.php?id=4328")
-    fun getPast():Observable<List<EventsItem>>
+    fun getPast():Observable<List<Events>>
 
     @GET("lookupteam.php")
     fun getTeam(@Query("id")id:Int):Observable<List<Team>>

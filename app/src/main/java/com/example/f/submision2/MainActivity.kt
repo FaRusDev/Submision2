@@ -4,10 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import com.example.f.submision2.model.Events
 import com.example.f.submision2.model.EventsItem
 import com.example.f.submision2.network.NetworkInterface
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         NetworkInterface.create()
     }
 
-    var disposable: Disposable? = null
+    var disposable: CompositeDisposable? = null
 
 
 
@@ -32,24 +32,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getNextEvent(){
-        disposable = network.getNext()
+        disposable?.add(network.getNext()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { result -> setupRecycler(result) },
+                        { result -> setupRecycler(result.get(0).events) },
                         { error -> Log.e("ERROR", error.message) }
-                )
+                ))
 
     }
 
-    fun setupRecycler(eventsItem: List<EventsItem>) {
+    fun setupRecycler(eventsItem: List<EventsItem?>?) {
 
         recycler.setHasFixedSize(true)
         val layoutManager = LinearLayoutManager(this)
         recycler.layoutManager = layoutManager
 
         recycler.adapter = MainAdapter(eventsItem,this){
-            Log.v("Article", it.toString())
+            Log.v("tes", it.toString())
         }
 
     }
