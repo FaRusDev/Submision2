@@ -7,8 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/recyclerView"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -22,86 +22,92 @@
         app:layout_constraintTop_toBottomOf="@+id/nextMatch">
 
 
-    <ProgressBar
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ProgressBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:id="@+id/recycler"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent">
+                android:layout_marginStart="8dp">
 
             </android.support.v7.widget.RecyclerView>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/nextMatch"
-            android:layout_width="0dp"
-            android:layout_height="59dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent">
+    </android.support.v4.widget.SwipeRefreshLayout>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+    <LinearLayout
+        android:id="@+id/nextMatch"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/itemTeamA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jadwal Selanjutnya"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/nextMatchIcon"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="192dp" />
+            android:scaleType="fitCenter"
+            app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
-        <LinearLayout
-            android:id="@+id/lastMatch"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/nextMatch"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="@+id/nextMatch">
+        <TextView
+            android:id="@+id/nextMatchTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jadwal Selanjutnya"
+            android:textAlignment="center" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="?android:attr/actionModeCopyDrawable" />
+    <LinearLayout
+        android:id="@+id/lastMatch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/nextMatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/nextMatch">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hasil Akhir"
-                android:textAlignment="center" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/lastMatchIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="?android:attr/actionModeCopyDrawable" />
+
+        <TextView
+            android:id="@+id/lastMatchTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasil Akhir"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="192dp" />
 
 
-    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
 

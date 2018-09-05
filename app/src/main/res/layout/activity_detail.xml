@@ -27,14 +27,13 @@
                 >
 
 
-
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/detailTanggal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tanggal"
-                    android:textSize="16sp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,7 +50,7 @@
                         >
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/detailImgTeamA"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@mipmap/ic_launcher_round"
