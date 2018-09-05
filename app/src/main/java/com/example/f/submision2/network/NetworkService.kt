@@ -41,8 +41,30 @@ interface NetworkService {
                 ))
     }
 
+    fun getTeamDetailA(disposable:CompositeDisposable,id:String){
+        disposable.add(this.loadData().getTeam(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        this::handleTeamRequestA,
+                        this::handleError
+                ))
+    }
+
+    fun getTeamDetailB(disposable:CompositeDisposable,id:String){
+        disposable.add(this.loadData().getTeam(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        this::handleTeamRequestB,
+                        this::handleError
+                ))
+    }
 
 
+
+    fun handleTeamRequestA(team: Team)
+    fun handleTeamRequestB(team: Team)
 
     fun handleRequest(events: Events)
     fun handleError(throwable: Throwable)

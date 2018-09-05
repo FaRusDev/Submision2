@@ -6,8 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.f.submision2.model.Events
 import com.example.f.submision2.model.EventsItem
+import com.example.f.submision2.model.Team
+import com.example.f.submision2.network.NetworkService
 import com.squareup.picasso.Picasso
+import io.reactivex.disposables.CompositeDisposable
 
 class MainAdapter(private val listEvents: List<EventsItem?>?,
                   private val click:(EventsItem)->Unit):RecyclerView.Adapter<MainAdapter.MainVH>() {
@@ -21,8 +25,9 @@ class MainAdapter(private val listEvents: List<EventsItem?>?,
         holder.bind(listEvents!![position],click)
     }
 
-    inner class MainVH(itemView: View?) : RecyclerView.ViewHolder(itemView!!){
+    inner class MainVH(itemView: View?) : RecyclerView.ViewHolder(itemView!!),NetworkService{
 
+        val disposable:CompositeDisposable = CompositeDisposable()
         val gbrA = itemView?.findViewById<ImageView>(R.id.itemGbrTeamA)
         val gbrB = itemView?.findViewById<ImageView>(R.id.itemGbrTeamB)
         val skorA = itemView?.findViewById<TextView>(R.id.itemSkorTeamA)
@@ -34,18 +39,14 @@ class MainAdapter(private val listEvents: List<EventsItem?>?,
 
         fun bind(events: EventsItem?, clk:(EventsItem)->Unit){
 
-//            val team = TeamsItem()
             val skorTeamA = events?.intHomeScore.toString()
             val skorTeamB = events?.intAwayScore.toString()
-//
-//            val idAway = events.events?.get().idAwayTeam
-//            NetworkServices().getTeam(idAway!!.toInt(),{},{})
 
+            val idHome:String? = events?.idHomeTeam
+            val idAway:String? = events?.idAwayTeam
 
-            Picasso.get().load("https://www.thesportsdb.com/images/media/team/badge/vrtrtp1448813175.png").into(gbrA)
-//            val idHome = events.events?.get().idHomeTeam
-//            NetworkServices().getTeam(idHome!!.toInt(),{},{})
-//            Picasso.get().load(team.strTeamBadge).to(gbrB)
+            getTeamDetailA(disposable,idHome!!)
+            getTeamDetailB(disposable,idAway!!)
 
             if (skorTeamA.equals("null") && skorTeamB.equals("null") ){
                 skorA?.visibility = View.GONE
@@ -68,5 +69,20 @@ class MainAdapter(private val listEvents: List<EventsItem?>?,
 
         }
 
+        override fun handleTeamRequestA(team: Team) {
+           Picasso.get().load(team.teams?.get(0)?.strTeamBadge.toString()).into(gbrA)
+        }
+
+        override fun handleTeamRequestB(team: Team) {
+            Picasso.get().load(team.teams?.get(0)?.strTeamBadge.toString()).into(gbrB)
+        }
+
+        override fun handleRequest(events: Events) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun handleError(throwable: Throwable) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
     }
 }

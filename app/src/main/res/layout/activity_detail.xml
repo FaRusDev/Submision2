@@ -51,30 +51,31 @@
 
                         <ImageView
                             android:id="@+id/detailImgTeamA"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             app:srcCompat="@mipmap/ic_launcher_round"
 
                             />
+
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/detailNamaTeamA"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            tools:text="tesA"
-                            />
+                            tools:text="tesA" />
+
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/detailFormasiA"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            tools:text="tesA"
-                            />
+                            tools:text="tesA" />
 
                     </LinearLayout>
 
 
-
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/detailSkorA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -93,7 +94,7 @@
                         tools:text="VS" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/detailSkorB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -112,24 +113,26 @@
                         >
 
                         <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/detailImgTeamB"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             app:srcCompat="@mipmap/ic_launcher_round"
 
                             />
+
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/detailNamaTeamB"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            tools:text="tesB"
-                            />
+                            tools:text="tesB" />
+
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/detaiFormasiB"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
-                            tools:text="tesA"
-                            />
+                            tools:text="tesA" />
 
                     </LinearLayout>
 
@@ -146,27 +149,25 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailGoalA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Goal"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailGoalB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -178,24 +179,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailShotA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Shots"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailShotB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -207,24 +208,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailYellowA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Shots"
+                        android:layout_weight="0.5"
+                        android:text="Yellow Card"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailYellowB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -236,34 +237,35 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailRedA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Shots"
+                        android:layout_weight="0.5"
+                        android:text="Red Card"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/detailRedB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
                     android:text="Lineups"
-                    android:textSize="16sp"
-                    />
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -273,24 +275,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/keeperA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Goal Keeper"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/keeperB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -302,24 +304,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/defenseA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Defense"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/defenseB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -331,24 +333,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/middleA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Middle"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/middleB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -360,24 +362,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/forwardA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Forward"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/forwardB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
@@ -389,24 +391,24 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/subA"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="textStart" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Subtitute"
                         android:textAlignment="center" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/subB"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 
